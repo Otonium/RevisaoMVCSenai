@@ -1,13 +1,35 @@
-// Importar EF Core
 using Microsoft.EntityFrameworkCore;
-// Importar a pasta onde está o arquivo AppDbContext
-using NAMESPACE_PROJETO.Data; // ficará válido depois do scaffold
+using RevisaoMVCAtividade2.Data;
 
-// registra o DbContext (o namespace/classe virão do scaffold)
-builder.Services.AddDbContext<NAMESPACE_PROJETO.Data.AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+var builder = WebApplication.CreateBuilder(args);
+
+// Adiciona MVC
+builder.Services.AddControllersWithViews();
+
+// Pega a conexão do appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("ConexaoPadrao");
+
+// Configura o Entity Framework para usar SQL Server
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+var app = builder.Build();
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=MUDAR_AQUI}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.Run();

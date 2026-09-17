@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RevisaoMVCAtividade2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c837207092228ed70124a02dee4c130a947cbac4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4331c2c7c47db32afac46d6da967166f977db310")]
 [assembly: System.Reflection.AssemblyProductAttribute("RevisaoMVCAtividade2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RevisaoMVCAtividade2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
