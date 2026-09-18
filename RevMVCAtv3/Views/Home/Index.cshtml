@@ -1,8 +1,45 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model RevMVCAtv3.Models.DispositivosViewModel
+@{
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
+    <title>Cafe - Item</title>
+
+    <link rel="stylesheet" href="~/styles/global.css">
+    <link rel="stylesheet" href="~/styles/itens.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Barra lateral --> 
+        <aside class="barra-lateral">
+            <a class="marca" href="~/Dashboard/Dashboard">
+                <!-- <img class="logo" src=""> -->
+            </a>
+            <nav class="menu-lateral">
+                <ul class="lista-atalhos">
+                    <div class="atalhos-topo">
+                        <li>
+                            <a class="atalho" href="~/Dashboard/Dashboard" title="Dashboard">
+                            Imagem
+                            </a>
+                        </li>
+                        <li>
+                            <a class="atalho" href="~/Perfil/Index" title="Perfil">
+                            Imagem
+                            </a>
+                        </li>
+                        <li>
+                            <a class="atalho ativo" href="#" title="Itens">
+                            <!-- Ate onde eu consegui -->
+                        <li>
+
+                    </div>
+                </div>
+            </body>
+
+</html>

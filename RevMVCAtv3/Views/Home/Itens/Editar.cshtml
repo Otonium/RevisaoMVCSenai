@@ -1,0 +1,95 @@
+@model RevMVCAtv3.Models.EditarRevMVCAtv3
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Item</title>
+
+    <link rel="stylesheet" href="~/styles/global.css" />
+    <link rel="stylesheet" href="~/styles/Itens.css">
+</head>
+
+<body>
+<div class="layout">
+
+    <!-- Barra lateral -->
+    <aside class="barra-lateral">
+        <a class="marca" href="~/Dashboard/Dashboard">
+            <!-- <img class="logo" src="~/assets/img/icone-logo.svg" alt=""> -->
+            Logo
+        </a>
+
+        <nav class="menu-lateral">
+            <ul class="lista-atalhos">
+                <div class="atalhos-topo">
+                    <li>
+                        <a class="atalho" href="~/Dashboard/Dashboard">
+
+                        <!-- <img class="icone-aside" src=""> -->
+                        Imagem
+                        </a>
+                    </li>
+                    <li>
+                        <a class="atalho ativo" href="#">
+                            Imagem
+                        </a>
+                    </li>
+                </div>
+
+                <li>
+                    <a class="atalho" href="~/Login/Sair">
+                        Imagem
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteudo -->
+    <div class="conteudo">
+
+        <header class="topo">
+            <div class="titulo-area">
+                <h1 class="titulo-pagina">Editar Item</h1>
+                <span class="linha-titulo"></span>
+            </div>
+        </header>
+
+        <section class="secao-perfil">
+            <form method="post" action="~/Dispositivos/Editar">
+
+            <!-- ID -->
+            <input type="hidden" name="IdItem" value="@Model.IdItem" />
+
+            <!-- Nome -->
+            <div class="campo">
+                <label>Nome</label>
+                <input type="text" name="Nome" value="@Model.Nome"/>
+            </div>
+
+            <!-- Ações -->
+            <div class="acoes-form">
+                <a class="btn btn-secundario" href="~/Dispositivos/Index">
+                <!-- <img src="~/assets/icon/xmark.svg" alt=""> -->
+                Cancelar
+                </a>
+
+                <button class="btn btn-primario" type="submit">
+                <!-- <img src=""> -->
+                Salvar
+                </button>
+            </div>
+
+        </form>
+    </section>
+
+</div>
+</div>
+</body>
+</html>
+
+
