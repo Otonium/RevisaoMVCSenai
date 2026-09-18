@@ -3,11 +3,16 @@ using Microsoft.EntityFrameworkCore;
 // Importar a pasta onde está o arquivo AppDbContext
 // using NAMESPACE_PROJETO.Data; // ficará válido depois do scaffold
 
-// registra o DbContext (o namespace/classe virão do scaffold)
-builder.Services.AddDbContext<NAMESPACE_PROJETO.Data.AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+// 1. Primeiro você declara e cria o builder
+var builder = WebApplication.CreateBuilder(args);
 
-// app.MapControllerRoute(
-//     name: "default",
-//     pattern: "{controller=HomeController}/{action=Index}/{id?}")
-//     .WithStaticAssets();
+// 2. Depois você usa o builder para configurar os serviços
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.Run();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=HomeController}/{action=Index}/{id?}")
+    .WithStaticAssets();
